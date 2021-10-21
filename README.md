@@ -1,2 +1,2 @@
 # Snake-and-ladder-game
-Simple Snake and ladder game using python
+This is a simple "Snake and ladder" terminal(typed) game using python.
