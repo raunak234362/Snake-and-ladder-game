@@ -2,123 +2,34 @@
 This is a simple "Snake and ladder" terminal(typed) game using python.
 
 
+Experience the thrill of Snake and Ladder like never before with this captivating terminal-based rendition of the classic game! 
+The Python-powered code creates a seamless and engaging journey through a virtual board, complete with snakes, ladders, and intense competition among players. Immerse yourself in this retro gaming experience right in your command line.
 
-Code--
+Features:
 
-from random import randint
+1. Dynamic Gameplay: The game begins with a simple prompt to start, inviting players to dive into the excitement. With just a press of the "Enter" key, you enter the realm of snakes and ladders.
 
-#defined where the ladders are placed in the board
+2. Single and Multiplayer Modes: The game offers both single-player and multiplayer modes. Choose to challenge the computer or gather friends for a multiplayer showdown. The number of players is customizable, accommodating up to four players for an electrifying competition.
 
-def ladders(x):
-    if x==2:
-        return 25
-    elif x==7:
-        return 31
-    elif x==20:
-        return 44
-    elif x==33:
-        return 76
-    elif x==41:
-        return 96
-    elif x==53:
-        return 89
-    else:
-        return x
+3. Player Names: Personalize your gameplay by entering the names of the players. Whether you're facing off against AI or friends, the game ensures a personalized touch.
 
-#defined where the snakes are placed in the board
+4. Turn-Based Mechanics: The game adheres to turn-based gameplay, allowing each player to roll the dice and make strategic moves. Players input is required to progress through the game, lending an interactive and engaging experience.
 
-def snakes(x): 
-    if x==40:
-        return 5
-    elif x==46:
-        return 11
-    elif x==95:
-        return 23
-    elif x==70:
-        return 27
-    elif x==83:
-        return 57
-    elif x==92:
-        return 48
-    else:
-        return x
-    
-def turn(player,score):
-    print()
-    print("Its",player,"turn.")
-    roll2=input("Press enter to Roll")
-    print()
-    if roll2=="":
-        a=randint(1,6)    #The maximum number of steps a player can get in the dice is 6. 
-        print(player,"rolled the dice")
-        print(player,"got a",a)
-        score+=a
-        if score<=100:
-            lad=ladders(score)
-            if lad!=score:
-                print("There's a ladder!",player,"climbed up.")
-                score=lad
-            snk=snakes(score)
-            if snk!=score: 
-                print(player,"got bitten by a snake!",player,"fall down!")
-                score=snk
-            print(player,"is now on box",score)    
-        else:
-            score-=a
-            print(player,"can't move.")
-            print(player,"is still on box",score)
-        if score==100:
-            print()
-            print(player,"Wins!")
-        return score
+5. Ladders and Snakes: The iconic elements of Snake and Ladder are brought to life as you climb ladders and slide down snakes, creating dramatic twists in the game's progress. Each ladder propels you closer to victory, while snakes threaten to set you back.
 
-print()
-print("-------------------------SNAKES N LADDERS-------------------------")
-print()
-while True:
-    play=input("Press Enter to Play and Exit to quit the game: ")
-    if play=="":
-        print("Choose your mode (Single player/Multiplayer)")
-        mode=input("Enter \"S\" for sigle player and \"M\" for multiplayer: ")
-        if mode=="S" or mode== "s":
-            player2="Computer"
-            num_players=2
-        else:
-            print("You can play with four players only:")
-            num_players=int(input("Enter number of players: "))    
-        player1=input("Enter player 1 name: ")
-        if (mode=="M" or mode=="m") and 5>num_players>1:
-            player2=input("Enter player 2 name: ")
-        if 5>num_players>2:
-            player3=input("Enter player 3 name: ")
-        if 5>num_players>3:
-            player4=input("Enter player 4 name: ") 
-            print()
-        print("Good Luck!")
-        print()    
-        while True:
-            play2=input("Press Enter to start.")
-            if play2=="":
-                player1_score=player2_score=player3_score=player4_score=0
-                while True:
-                    if 5>num_players>1:
-                        player1_score=turn(player1,player1_score)
-                        if player1_score==100:
-                            break
-                        player2_score=turn(player2,player2_score)
-                        if player2_score==100:
-                            break
-                    if 5>num_players>2:
-                        player3_score=turn(player3,player3_score)
-                        if player3_score==100:
-                            break    
-                    if 5>num_players>3:
-                        player4_score=turn(player4,player4_score)
-                        if player4_score==100:
-                            break
-                    print("________________________________________________________________")
-            break                                                
-    elif play=="exit" or play=="Exit":
-        break
-        quit
+6. Random Dice Rolls: The element of chance is infused with dice rolls. A simple press of the "Enter" key generates a random number from 1 to 6, determining the number of spaces you advance on the board.
+
+7. Real-time Feedback: Engaging messages keep you informed about your progress. Visual cues indicate when players climb ladders or succumb to the jaws of snakes, making the experience dynamic and immersive.
+
+8. Victory Celebration: The heart-pounding moment of victory is celebrated with a congratulatory message as you land on the 100th square. Revel in the sweet taste of triumph as your name is announced as the winner.
+
+9. Seamless Restart: Once a game concludes, players have the option to restart immediately, ensuring that the excitement never ends. The game waits for your command, ready to whisk you back into the action.
+
+10. Clear User Interface: With a clean and user-friendly interface, the game ensures that players of all ages can effortlessly navigate through the world of Snake and Ladder.
+
+11. Customization: The code's modular structure allows for easy expansion and customization. Aspiring programmers can modify the game's rules, add new features, or enhance visuals to create their own unique Snake and Ladder experience.
+
+
+
+
 
